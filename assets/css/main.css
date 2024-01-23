@@ -1,0 +1,62 @@
+/*#809bce // #95b8d1 // #b8e0d2 // #d6eadf // #eac4d5*/
+:root {
+  --brand-1: #809bce;
+  --brand-2: #95b8d1;
+  --brand-3: #b8e0d2;
+  --brand-4: #d6eadf;
+  --brand-5: #eac4d5;
+  --brand-6: #faf1f5;
+  --brand-bg: #fcf5f8;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--brand-bg);
+}
+
+header {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 1em;
+}
+
+.logo {
+  width: 5em;
+  filter: invert(48%) sepia(28%) saturate(2180%) hue-rotate(156deg) brightness(96%) contrast(103%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+aside {
+  background-color: #fdfdfd;
+  border-radius: 15%;
+}
+
+#mensaje {
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+  padding: 10em 0.5em;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: var(--brand-1);
+}
+
+@media all and (min-width: 40em) {
+  .container {
+    flex-direction: row;
+  }
+}
