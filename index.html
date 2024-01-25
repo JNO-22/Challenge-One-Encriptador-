@@ -7,23 +7,40 @@
     <title>Encriptador | Alura + Oracle</title>
     <link rel="normalize" href="/assets/css/normalize.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <main>
-      <header class="logo-container">
-        <img src="assets/images/logo.svg" class="logo" alt="Logo de Alura" />
-      </header>
+      
       <div class="container">
         <section class="container-left">
-          <textarea name="mensaje" id="mensaje" placeholder="Ingrese el texto aqui"></textarea>
-          <div class="botones">
+          <header class="logo-container">
+            <img src="assets/images/logo.svg" class="logo" alt="Logo de Alura" />
+          </header>
+          <div class="mensaje-container">
+            <textarea name="mensaje" id="mensaje" cols="35" rows="10" placeholder="Leave a comment here"></textarea>
+          </div>
+          <div class=" mensaje-footer">
+            <div class="advertencia">
+                <img src="assets/images/icon.svg" class="advertencia" alt="Advertencia" />
             <p>Solo letras minusculas y sin acentos</p>
-            <button id="encriptar">Encriptar</button>
-            <button id="desencriptar">Desencriptar</button>
+            </div>
+            <div class="botones-container">
+              <button id="boton-1" class="botones">Encriptar</button>
+              <button id="boton-2" class="botones">Desencriptar</button>
+            </div>
           </div>
         </section>
         <aside class="container-right">
-          <span>Aside</span>
+          <p id="texto"></p>
+          <div class="text">
+            <img src="assets/images/muneco.svg" class="muneco" id="muneco" alt="Muneco" />
+            <h2 class="muneco">Ningun mensaje fue encontrado</h2>
+            <p class="muneco">Ingresa el texto que desees encriptar o desencriptar</p>
+            <button id="boton-3" class="botones">Copiar</button>
+          </div>
         </aside>
       </div>
     </mai>
