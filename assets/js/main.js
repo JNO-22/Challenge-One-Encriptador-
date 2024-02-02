@@ -5,7 +5,7 @@ for (let i = 0; i < btns.length; i++) {
 
 function getText() {
   var text = document.getElementById("mensaje").value;
-  if (!new RegExp(/^[a-z,\s]+$/i).test(text) && this.id !== "boton-3") {
+  if (!new RegExp(/^[a-z\s]+$/i).test(text) && this.id !== "boton-3") {
     alert("Ingresa solo letras minusculas");
   } else {
     switch (this.id) {
@@ -24,6 +24,7 @@ function getText() {
 }
 
 function encriptarTexto(text) {
+  document.getElementById("texto").innerText = "";
   const result = text
     .replaceAll("e", "enter")
     .replaceAll("i", "imes")
@@ -34,6 +35,7 @@ function encriptarTexto(text) {
 }
 
 function desencriptarTexto() {
+  document.getElementById("texto").innerText = "";
   const text = document.getElementById("mensaje").value;
   const result = text
     .replaceAll("enter", "e")

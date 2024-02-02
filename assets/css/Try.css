@@ -1,0 +1,189 @@
+/*#FFFFFF // #F0F4FF // #4E67EB // #291D89*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
+
+:root {
+  --brand-1: #fdfdfd;
+  --brand-2: #f0f4ff;
+  --brand-3: #c85a35;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background: linear-gradient(30deg, #ff93e8, #92e6ff);
+  color: #1d1d1d;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* LOGO */
+#logo-container {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 2em;
+}
+
+#logo {
+  width: 4em;
+  filter: invert(48%) sepia(28%) saturate(2180%) hue-rotate(156deg) brightness(96%) contrast(103%);
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.ventana-principal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #fdfdfd;
+  border: #1d1d1d 3px solid;
+}
+
+.ventana-border {
+  border-bottom: #1d1d1d 2px solid;
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.ventana-border-text {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+}
+
+.ventana-border-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8em;
+  align-items: center;
+  justify-content: center;
+}
+
+.ventana-button {
+  display: block;
+  width: 50%;
+  height: 15px;
+  margin: auto;
+  border: #1d1d1d 2px solid;
+  padding: 0.1em;
+}
+
+/* Stylo del contenedor del mensaje */
+
+/* Ajustamos el tamaño de la textarea a la cantidad de cols */
+#mensaje {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 1.2em;
+  background-color: transparent;
+  padding: 0 1em;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  color: #1d1d1d;
+  font-weight: 500;
+}
+
+/* SUBMENU */
+
+.ventana-submenu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  top: 2em;
+  margin: auto;
+  background-color: #fdfdfd;
+  border: #1d1d1d 2px solid;
+}
+
+.ventana-border-text {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+/* BOTONES */
+.ventana-submenu-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.botones {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  padding: 0 2em;
+  margin: 1em 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+#boton-1 {
+  background-color: var(--brand-2);
+  border: #1d1d1d 2px solid;
+}
+
+#boton-2 {
+  background-color: transparent;
+  border: 1px solid var(--brand-4);
+  color: var(--brand-4);
+}
+/* ASIDE STYLING  */
+
+aside {
+  background-color: #fdfdfd;
+  border-radius: 20px;
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  margin: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 1em;
+}
+
+#texto {
+  width: 100%;
+  word-wrap: break-word;
+  display: inline-block;
+  justify-self: start;
+}
+
+#muneco {
+  display: none;
+  width: 12em;
+  height: 100%;
+  margin: auto;
+}
+
+@media all and (min-width: 40em) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+  }
+  .ventana-principal {
+    height: 100%;
+  }
+  #muneco {
+    display: block;
+  }
+}
