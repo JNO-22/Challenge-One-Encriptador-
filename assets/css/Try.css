@@ -1,15 +1,15 @@
 /*#FFFFFF // #F0F4FF // #4E67EB // #291D89*/
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
 
 :root {
   --brand-1: #fdfdfd;
   --brand-2: #f0f4ff;
   --brand-3: #c85a35;
+  --brand-4: linear-gradient(30deg, #ff93e8, #92e6ff);
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
-  background: linear-gradient(30deg, #ff93e8, #92e6ff);
+  background-image: url("../images/bg.png");
+  background-size: cover;
   color: #1d1d1d;
 }
 
@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4em;
 }
 
 /* LOGO */
@@ -27,23 +28,24 @@ body {
 }
 
 #logo {
-  width: 4em;
+  width: 8ch;
   filter: invert(48%) sepia(28%) saturate(2180%) hue-rotate(156deg) brightness(96%) contrast(103%);
 }
 
 /* CONTENEDOR PRINCIPAL */
 
-.ventana-principal {
+.window {
   display: flex;
   flex-direction: column;
-  flex: 1;
   background-color: #fdfdfd;
-  border: #1d1d1d 3px solid;
+  border: #1d1d1d 1px solid;
+  box-shadow: 4px 5px 5px #1d1d1d57;
 }
 
-.ventana-border {
+.window-border {
   border-bottom: #1d1d1d 2px solid;
-  height: 2em;
+  border-radius: inherit;
+  min-height: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,37 +53,35 @@ body {
   padding: 0 1em;
 }
 
-.ventana-border-text {
+.window-border-text {
   font-weight: bold;
   font-size: 1.2em;
   letter-spacing: 0.1em;
+  margin: 0;
 }
 
-.ventana-border-buttons {
+.window-border-buttons {
   display: flex;
   flex-direction: row;
-  gap: 0.8em;
+  gap: 0.8rem;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
-.ventana-button {
+.window-button {
   display: block;
-  width: 50%;
-  height: 15px;
-  margin: auto;
+  width: 1.5ch;
   border: #1d1d1d 2px solid;
-  padding: 0.1em;
+  padding: 0.2em;
 }
 
 /* Stylo del contenedor del mensaje */
 
 /* Ajustamos el tamaño de la textarea a la cantidad de cols */
 #mensaje {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-size: 1.2em;
-  background-color: transparent;
-  padding: 0 1em;
+  font-size: 1.2rem;
+  padding: 1em 1em;
   resize: none;
   border: none;
   outline: none;
@@ -94,7 +94,7 @@ body {
 
 /* SUBMENU */
 
-.ventana-submenu {
+.window-submenu {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -103,16 +103,22 @@ body {
   margin: auto;
   background-color: #fdfdfd;
   border: #1d1d1d 2px solid;
+  z-index: 10;
 }
 
-.ventana-border-text {
+#window-warning-border {
+  background-color: var(--brand-2);
+  border-radius: inherit;
+}
+
+.window-border-text {
   display: flex;
   flex-direction: row;
   gap: 1em;
 }
 
 /* BOTONES */
-.ventana-submenu-buttons {
+.window-submenu-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -120,53 +126,48 @@ body {
 }
 
 .botones {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
   padding: 0 2em;
   margin: 1em 0;
   font-weight: bold;
   cursor: pointer;
 }
-#boton-1 {
+#boton-encriptar {
   background-color: var(--brand-2);
   border: #1d1d1d 2px solid;
 }
 
-#boton-2 {
+#boton-desencriptar {
   background-color: transparent;
   border: 1px solid var(--brand-4);
   color: var(--brand-4);
 }
-/* ASIDE STYLING  */
 
-aside {
-  background-color: #fdfdfd;
-  border-radius: 20px;
-  width: 20em;
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  margin: 1em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+/* output window style  */
+
+#window-2 {
+  max-width: 60ch;
 }
 
-.text {
+.window-output {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   gap: 1em;
+  padding: 2em;
+  max-height: 30rem;
 }
 
-#texto {
-  width: 100%;
+#window-output-text {
+  width: 90%;
+  height: 100%;
+  overflow-y: scroll;
+  display: block;
   word-wrap: break-word;
-  display: inline-block;
-  justify-self: start;
 }
 
-#muneco {
+#window-output-img {
   display: none;
   width: 12em;
   height: 100%;
@@ -180,10 +181,21 @@ aside {
     align-items: center;
     padding: 0 1em;
   }
-  .ventana-principal {
-    height: 100%;
+
+  .window-submenu {
+    position: absolute;
+    width: 20rem;
+    top: 34em;
+    left: 0;
+    right: 50%;
+    margin: auto;
   }
-  #muneco {
+
+  .window {
+    height: 100%;
+    width: 60%;
+  }
+  #window-output-img {
     display: block;
   }
 }

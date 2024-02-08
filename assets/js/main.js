@@ -5,18 +5,18 @@ for (let i = 0; i < btns.length; i++) {
 
 function getText() {
   var text = document.getElementById("mensaje").value;
-  if (!new RegExp(/^[a-z\s]+$/i).test(text) && this.id !== "boton-3") {
+  if (!new RegExp(/^[a-z\s]+$/i).test(text) && this.id !== "boton-copiar") {
     alert("Ingresa solo letras minusculas");
   } else {
     switch (this.id) {
-      case "boton-1":
+      case "btn-encriptar":
         encriptarTexto(text);
         break;
-      case "boton-2":
-        desencriptarTexto();
+      case "btn-desencriptar":
+        desencriptarTexto(text);
         break;
 
-      case "boton-3":
+      case "boton-copiar":
         copiar();
         break;
     }
@@ -24,7 +24,7 @@ function getText() {
 }
 
 function encriptarTexto(text) {
-  document.getElementById("texto").innerText = "";
+  document.getElementById("window-output-text").innerText = "";
   const result = text
     .replaceAll("e", "enter")
     .replaceAll("i", "imes")
@@ -34,9 +34,8 @@ function encriptarTexto(text) {
   mostrarMSJ(result);
 }
 
-function desencriptarTexto() {
-  document.getElementById("texto").innerText = "";
-  const text = document.getElementById("mensaje").value;
+function desencriptarTexto(text) {
+  document.getElementById("window-output-text").innerText = "";
   const result = text
     .replaceAll("enter", "e")
     .replaceAll("imes", "i")
@@ -46,26 +45,37 @@ function desencriptarTexto() {
   mostrarMSJ(result);
 }
 
-function mostrarMSJ(texto) {
-  spn = document.getElementById("texto");
-  txt = document.createTextNode(texto);
-  spn.appendChild(txt);
-  for (const box of document.getElementsByClassName("muneco")) {
+function mostrarMSJ(textoResultante) {
+  const output = document.getElementById("window-output-text");
+  escribirMSJ(output, textoResultante, 0, 50);
+  for (const box of document.getElementsByClassName("window-output-warning")) {
     box.style.display = "none";
   }
   document.getElementById("mensaje").value = "";
 }
 
+function escribirMSJ(target, mensaje, index, intervalo) {
+  if (index < mensaje.length && mensaje.length < 50) {
+    target.innerHTML += mensaje.charAt(index);
+    index++;
+    setTimeout(escribirMSJ, intervalo, target, mensaje, index, intervalo);
+  } else {
+    target.innerHTML = mensaje;
+  }
+}
+
 function copiar() {
-  navigator.clipboard.writeText(document.getElementById("texto").innerText).then(() => {
-    alert("Copiado: " + document.getElementById("texto").innerText);
-    ocultarMSJ();
-  });
+  navigator.clipboard
+    .writeText(document.getElementById("window-output-text").innerText)
+    .then(() => {
+      alert("Copiado: " + document.getElementById("window-output-text").innerText);
+      ocultarMSJ();
+    });
 }
 
 function ocultarMSJ() {
-  document.getElementById("texto").innerText = "";
-  for (const box of document.getElementsByClassName("muneco")) {
+  document.getElementById("window-output-text").innerText = "";
+  for (const box of document.getElementsByClassName("window-output-warning")) {
     box.style.display = "block";
   }
 }

@@ -14,23 +14,23 @@
         <img src="assets/images/logo.svg" id="logo" alt="Logo de Alura" />
       </header>
       <div class="container">
-        <section class="ventana-principal">
-          <div class="ventana-border">
-            <p class="ventana-border-text">Notepad</p>
-            <div class="ventana-border-buttons">
+        <section class="window">
+          <div class="window-border">
+            <p class="window-border-text">Notepad</p>
+            <div class="window-border-buttons">
               <img
                 src="assets/images/minimize-window-svgrepo-com.svg"
-                class="ventana-button"
+                class="window-button"
                 alt="Windows buttons"
               />
               <img
                 src="assets/images/fullscreen-svgrepo-com.svg"
-                class="ventana-button"
+                class="window-button"
                 alt="Windows buttons"
               />
               <img
                 src="assets/images/icons8-close.svg"
-                class="ventana-button"
+                class="window-button"
                 alt="Windows buttons"
               />
             </div>
@@ -43,40 +43,62 @@
             rows="15"
             placeholder="Leave a comment here"
           ></textarea>
-          <div class="ventana-submenu">
-            <div class="ventana-border">
-              <p class="ventana-border-text">Encrypt.exe</p>
-              <div class="ventana-border-buttons">
+          <div class="window-submenu">
+            <div class="window-border" id="window-warning-border">
+              <p class="window-border-text">Encrypt.exe</p>
+              <div class="window-border-buttons">
                 <img
                   src="assets/images/minimize-window-svgrepo-com.svg"
-                  class="ventana-button"
+                  class="window-button"
                   alt="Windows buttons"
                 />
                 <img
                   src="assets/images/fullscreen-svgrepo-com.svg"
-                  class="ventana-button"
+                  class="window-button"
                   alt="Windows buttons"
                 />
                 <img
                   src="assets/images/icons8-close.svg"
-                  class="ventana-button"
+                  class="window-button"
                   alt="Windows buttons"
                 />
               </div>
             </div>
-            <div class="ventana-submenu-buttons">
-              <button class="botones">Encriptar</button>
-              <button class="botones">Desencriptar</button>
+            <div class="window-submenu-buttons">
+              <button class="botones" id="btn-encriptar">Encriptar</button>
+              <button class="botones" id="btn-desencriptar">Desencriptar</button>
             </div>
           </div>
         </section>
-        <aside class="container-right">
-          <p id="texto"></p>
-          <div class="text">
-            <img src="assets/images/muneco.svg" class="muneco" id="muneco" alt="Muneco" />
-            <h2 class="muneco">Ningun mensaje fue encontrado</h2>
-            <p class="muneco">Ingresa el texto que desees encriptar o desencriptar</p>
-            <button id="boton-3" class="botones">Copiar</button>
+        <aside class="window" id="window-2">
+          <div class="window-border">
+            <p class="window-border-text">output</p>
+            <div class="window-border-buttons">
+              <img
+                src="assets/images/minimize-window-svgrepo-com.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+              <img
+                src="assets/images/fullscreen-svgrepo-com.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+              <img
+                src="assets/images/icons8-close.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+            </div>
+          </div>
+
+          <div class="window-output">
+            <p id="window-output-text"></p>
+            <h2 class="window-output-warning">Ningun mensaje fue encontrado</h2>
+            <p class="window-output-warning">
+              Ingresa el texto que desees encriptar o desencriptar
+            </p>
+            <button id="boton-copiar" class="botones">Copiar</button>
           </div>
         </aside>
       </div>
