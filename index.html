@@ -16,7 +16,7 @@
       <div class="container">
         <section class="window">
           <div class="window-border">
-            <p class="window-border-text">Notepad</p>
+            <p class="window-border-text"></p>
             <div class="window-border-buttons">
               <img
                 src="assets/images/minimize-window-svgrepo-com.svg"
@@ -41,7 +41,7 @@
             id="mensaje"
             cols="30"
             rows="15"
-            placeholder="Leave a comment here"
+            placeholder="Escribe el texto que deseas encriptar o desencriptar"
           ></textarea>
           <div class="window-submenu">
             <div class="window-border" id="window-warning-border">
@@ -70,9 +70,35 @@
             </div>
           </div>
         </section>
+
+        <div class="window" id="window-alert">
+          <div class="window-border">
+            <div class="window-border-buttons">
+              <img
+                src="assets/images/minimize-window-svgrepo-com.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+              <img
+                src="assets/images/fullscreen-svgrepo-com.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+              <img
+                src="assets/images/icons8-close.svg"
+                class="window-button"
+                alt="Windows buttons"
+              />
+            </div>
+          </div>
+          <div class="window-alert">
+            <p id="window-alert-text"></p>
+            <button id="boton-alert" class="botones">Copiar</button>
+          </div>
+        </div>
+
         <aside class="window" id="window-2">
           <div class="window-border">
-            <p class="window-border-text">output</p>
             <div class="window-border-buttons">
               <img
                 src="assets/images/minimize-window-svgrepo-com.svg"
@@ -93,9 +119,9 @@
           </div>
 
           <div class="window-output">
-            <p id="window-output-text"></p>
-            <h2 class="window-output-warning">Ningun mensaje fue encontrado</h2>
-            <p class="window-output-warning">
+            <p class="window-output-text" id="window-output-text"></p>
+            <h2 class="window-output-warning" id="warning-titulo">Ningun mensaje fue encontrado</h2>
+            <p class="window-output-warning" id="warning-texto">
               Ingresa el texto que desees encriptar o desencriptar
             </p>
             <button id="boton-copiar" class="botones">Copiar</button>

@@ -48,7 +48,7 @@ body {
   min-height: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   padding: 0 1em;
 }
@@ -98,12 +98,12 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 80%;
-  top: 2em;
+  min-width: 40ch;
+  top: 2.5em;
   margin: auto;
   background-color: #fdfdfd;
   border: #1d1d1d 2px solid;
-  z-index: 10;
+  z-index: 2;
 }
 
 #window-warning-border {
@@ -144,26 +144,21 @@ body {
 
 /* output window style  */
 
-#window-2 {
-  max-width: 60ch;
-}
-
 .window-output {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 1em;
   padding: 2em;
   max-height: 30rem;
+  gap: 1em;
+  text-align: center;
 }
 
 #window-output-text {
   width: 90%;
   height: 100%;
   overflow-y: scroll;
-  display: block;
+  display: none;
   word-wrap: break-word;
 }
 
@@ -174,26 +169,50 @@ body {
   margin: auto;
 }
 
+/* Alert style */
+#window-alert {
+  display: none;
+  z-index: 3;
+  position: absolute;
+  margin: auto auto;
+  left: 0;
+  right: 0;
+  max-width: 40ch;
+  min-height: 1em;
+}
+
+.window-alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-alert-text {
+  text-align: center;
+  margin: 0;
+  padding: 1em;
+}
+
 @media all and (min-width: 40em) {
   .container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1em;
+    padding: 0 4em;
   }
 
   .window-submenu {
     position: absolute;
     width: 20rem;
-    top: 34em;
-    left: 0;
-    right: 50%;
+    top: 30em;
+    left: 18em;
     margin: auto;
   }
 
   .window {
-    height: 100%;
-    width: 60%;
+    min-height: 20rem;
+    width: 60ch;
   }
   #window-output-img {
     display: block;

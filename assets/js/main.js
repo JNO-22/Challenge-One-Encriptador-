@@ -4,15 +4,17 @@ for (let i = 0; i < btns.length; i++) {
 }
 
 function getText() {
+  const pattern = /^[a-z\s]+$/;
   var text = document.getElementById("mensaje").value;
-  if (!new RegExp(/^[a-z\s]+$/i).test(text) && this.id !== "boton-copiar") {
-    alert("Ingresa solo letras minusculas");
-  } else {
+  var output = document.getElementById("window-output-text");
+  if (pattern.test(text) || this.id == "boton-copiar") {
     switch (this.id) {
       case "btn-encriptar":
+        output.innerText = "";
         encriptarTexto(text);
         break;
       case "btn-desencriptar":
+        output.innerText = "";
         desencriptarTexto(text);
         break;
 
@@ -20,11 +22,21 @@ function getText() {
         copiar();
         break;
     }
+  } else {
+    alerta("Solo se aceptan letras minusculas");
   }
 }
 
+function alerta(aviso) {
+  document.getElementById("window-alert").style.display = "block";
+  document.getElementById("window-alert-text").innerText = aviso;
+  document.getElementById("boton-alert").onclick = () => {
+    document.getElementById("window-alert").style.display = "none";
+  };
+}
+
 function encriptarTexto(text) {
-  document.getElementById("window-output-text").innerText = "";
+  document.getElementById("window-output-text").style.display = "block";
   const result = text
     .replaceAll("e", "enter")
     .replaceAll("i", "imes")
@@ -35,11 +47,12 @@ function encriptarTexto(text) {
 }
 
 function desencriptarTexto(text) {
-  document.getElementById("window-output-text").innerText = "";
-  const result = text
+  document.getElementById("window-output-text").style.display = "block";
+  // separe "ai" de los demas porque colisiona con "imes" al empezar con "i"
+  let result = text.replaceAll("ai", "a");
+  result = result
     .replaceAll("enter", "e")
     .replaceAll("imes", "i")
-    .replaceAll("ai", "a")
     .replaceAll("ober", "o")
     .replaceAll("ufat", "u");
   mostrarMSJ(result);
@@ -68,13 +81,14 @@ function copiar() {
   navigator.clipboard
     .writeText(document.getElementById("window-output-text").innerText)
     .then(() => {
-      alert("Copiado: " + document.getElementById("window-output-text").innerText);
+      document.getElementById("warning-titulo").innerText = "Copiado";
+      document.getElementById("warning-texto").innerText = "Ingrese otro texto para continuar";
       ocultarMSJ();
     });
 }
 
 function ocultarMSJ() {
-  document.getElementById("window-output-text").innerText = "";
+  document.getElementById("window-output-text").style.display = "none";
   for (const box of document.getElementsByClassName("window-output-warning")) {
     box.style.display = "block";
   }
