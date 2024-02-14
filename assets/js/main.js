@@ -28,10 +28,10 @@ function getText() {
 }
 
 function alerta(aviso) {
-  document.getElementById("window-alert").style.display = "block";
+  document.getElementById("alerta").style.display = "flex";
   document.getElementById("window-alert-text").innerText = aviso;
   document.getElementById("boton-alert").onclick = () => {
-    document.getElementById("window-alert").style.display = "none";
+    document.getElementById("alerta").style.display = "none";
   };
 }
 
