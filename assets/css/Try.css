@@ -2,12 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
 
-:root {
-  --brand-1: #fdfdfd;
-  --brand-2: #f0f4ff;
-  --brand-3: #c85a35;
-}
-
 body {
   background-image: url("../images/AnymzpF.jpeg");
   font-family: "IBM Plex Sans", sans-serif;
@@ -39,14 +33,13 @@ body {
 .window {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #fdfdfd;
+  background-color: white;
   border-radius: 15px 15px 0 0;
   box-shadow: 4px 5px 5px #1d1d1d57;
 }
 
 .window-border {
-  background-color: #ebebeb;
+  background-color: #E7DCC8;
   border-radius: inherit;
   min-height: 2rem;
   display: flex;
@@ -56,20 +49,18 @@ body {
 }
 
 .window-border-text {
-  font-weight: normal;
-  letter-spacing: 0.1em;
+  letter-spacing: 4px;
   margin: 0 1em;
 }
 
 .window-border-buttons {
+  width: inherit;
   display: flex;
-  gap: 0.8rem;
-  margin-right: 1em;
+  align-items: center;
 }
 
 .window-button {
-  width: 1ch;
-  padding: 4px;
+  width: 4ch;
 }
 
 /* Stylo del contenedor del mensaje */
@@ -81,6 +72,7 @@ body {
   resize: none;
   border: none;
   outline: none;
+  background: none;
 }
 
 ::placeholder {
@@ -91,20 +83,14 @@ body {
 /* SUBMENU */
 
 .window-submenu {
-  display: grid;
-  flex-direction: column;
   position: relative;
-  max-width: 100%;
   top: 1em;
   margin: auto;
+  border: #1d1d1d 1px solid;
+  border-radius: 5px;
   background-color: #fdfdfd;
-  border-radius: 15px 0 15px 15px;
   box-shadow: 4px 5px 5px #1d1d1d57;
   z-index: 2;
-}
-
-#window-warning-border {
-  background-color: var(--brand-2);
 }
 
 /* BOTONES */
@@ -112,35 +98,43 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 1em;
 }
 
 .botones {
-  padding: 0 2em;
-  margin: 1em 0;
-  font-weight: bold;
+  padding: 0.6em 2em;
+  border: none;
+  border-radius: 15px;
   cursor: pointer;
+  font-weight: 500;
+background: none;
 }
-#boton-encriptar {
-  background-color: var(--brand-2);
-  border: #1d1d1d 2px solid;
+#btn-encriptar {
+  background-color: var(--brand-1) ;
+  color: #fdfdfd;
 }
 
-#boton-desencriptar {
-  background-color: transparent;
-  border: 1px solid var(--brand-4);
-  color: var(--brand-4);
+:root {
+  --brand-1: #e0417b;
+  --brand-2: #5b86cb;
+}
+
+#btn-desencriptar {
+  border: 2px solid var(--brand-2);
+  color: var(--brand-2);
 }
 
 /* output window style  */
 
 .window-output {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-  gap: 1em;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+
 }
 
 #window-output-text {
@@ -179,7 +173,7 @@ body {
 }
 
 #cat{
-  width: 14em;
+  width: 10em;
   z-index: 3;
   position: relative;
   top: 1.5em;
@@ -191,6 +185,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 2em ;
 }
 
 #window-alert-text {
@@ -207,17 +202,17 @@ body {
   }
 
   .window-submenu {
-    position: absolute;
+    position: relative;
     width: 20rem;
-    top: 30em;
-    left: 18em;
-    margin: auto;
+    top: 2em;
+    left: 12em;
   }
 
   .window {
-    min-height: 20rem;
+    min-height: 10rem;
     width: 60ch;
   }
+
   #window-output-img {
     display: block;
   }
