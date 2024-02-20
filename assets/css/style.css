@@ -83,6 +83,7 @@ body {
 /* SUBMENU */
 
 .window-submenu {
+  max-width: 90%;
   position: relative;
   top: 1em;
   margin: auto;
@@ -98,13 +99,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1em;
   gap: 1em;
 }
 
 .botones {
-  padding: 0.6em 2em;
+  padding: 0.6em 1em;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
@@ -216,7 +217,7 @@ body {
   text-align: center;
 }
 
-@media all and (min-width: 40em) {
+@media all and (min-width: 50em) {
   .container {
     flex-direction: row;
     justify-content: space-between;
@@ -244,5 +245,8 @@ body {
     width: 10em;
     top: 1.4em;
     left: 13em;
+  }
+  .botones {
+    padding: 0.5em 2em;
   }
 }
