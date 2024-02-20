@@ -28,8 +28,9 @@ function getText() {
 }
 
 function alerta(aviso) {
+  document.getElementById("cat").classList.add("active-animation");
   document.getElementById("alerta").style.display = "flex";
-  document.getElementById("window-alert-text").innerText = aviso;
+  document.getElementById("window-alert-text").innerText = aviso;  
   document.getElementById("boton-alert").onclick = () => {
     document.getElementById("alerta").style.display = "none";
   };
@@ -61,6 +62,7 @@ function desencriptarTexto(text) {
 function mostrarMSJ(textoResultante) {
   const output = document.getElementById("window-output-text");
   escribirMSJ(output, textoResultante, 0, 50);
+  document.getElementById("boton-copiar").style.display = "block";
   for (const box of document.getElementsByClassName("window-output-warning")) {
     box.style.display = "none";
   }
@@ -83,6 +85,7 @@ function copiar() {
     .then(() => {
       document.getElementById("warning-titulo").innerText = "Copiado";
       document.getElementById("warning-texto").innerText = "Ingrese otro texto para continuar";
+  document.getElementById("boton-copiar").style.display = "none";
       ocultarMSJ();
     });
 }
