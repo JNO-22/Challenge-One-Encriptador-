@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Encriptador | Alura + Oracle</title>
+    <link rel="normalize" href="/assets/css/normalize.css" />
+    <link id="style" rel="stylesheet" href="/assets/css/Try.css" />
+  </head>
+  <body>
+    <main>
+      <header id="logo-container">
+        <img src="assets/images/logo.svg" id="logo" alt="Logo de Alura" />
+      </header>
+      <div class="container">
+        <section class="window">
+          <div class="window-border">
+            <p class="window-border-text">Notepad</p>
+            <div class="window-border-buttons">
+              <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+           </div>
+          </div>
+
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            cols="30"
+            rows="15"
+            placeholder="Escribe el texto que deseas encriptar o desencriptar"
+          ></textarea>
+          <div class="window-submenu">
+            <div class="window-border" id="window-warning-border">
+              <p class="window-border-text">Encrypt</p>
+              <div class="window-border-buttons">
+                <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+             </div>
+            </div>
+            <div class="window-submenu-buttons">
+              <button class="botones btn-submenu" id="btn-encriptar">Encriptar</button>
+              <button class="botones btn-submenu" id="btn-desencriptar">Desencriptar</button>
+            </div>
+          </div>
+        </section>
+
+
+<div id="alerta">
+  <img src="assets/images/cat-s.webp" alt=" Gato" id="cat" class="cat">
+        <div class="window" id="window-alert">
+          <div class="window-border">
+            <p class="window-border-text">Alerta</p>
+            <div class="window-border-buttons">
+              <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+           </div>
+          </div>
+          <div class="window-alert">
+            <p id="window-alert-text"></p>
+            <button id="boton-alert" class="botones">Aceptar</button>
+          </div>
+        </div>
+      </div>
+
+        <aside class="window" id="window-2">
+          <div class="window-border">
+            <p class="window-border-text">Output</p>
+            <div class="window-border-buttons">
+               <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+            </div>
+          </div>
+
+          <div class="window-output">
+            <p class="window-output-text" id="window-output-text"></p>
+            <h2 class="window-output-warning" id="warning-titulo">Ningun mensaje fue encontrado</h2>
+            <p class="window-output-warning" id="warning-texto">
+              Ingresa el texto que desees encriptar o desencriptar
+            </p>
+            <button id="boton-copiar" class="botones">Copiar</button>
+          </div>
+        </aside>
+      </div>
+      <footer>
+        <p>Alura - Oracle</p>
+      </footer>
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

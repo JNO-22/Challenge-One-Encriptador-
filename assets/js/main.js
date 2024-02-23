@@ -96,3 +96,50 @@ function ocultarMSJ() {
     box.style.display = "block";
   }
 }
+
+
+var object = document.querySelector("#myWindow"),initX,initY,firstX,firstY;
+
+// addevenlistener de todos los elementos de la clase
+  object.addEventListener("mousedown",iniciarMovimiento,false);
+
+// iniciarMovimiento para todos los elementos en un escritorio
+function iniciarMovimiento(e){
+console.log(e);
+ e.preventDefault();
+ initX = this.offsetLeft;
+ initY = this.offsetTop;
+ firstX = e.pageX;
+ firstY = e.pageY;
+
+ this.addEventListener("mousemove",continuarMovimiento,false );
+
+ window.addEventListener("mouseup",finMovimiento , false);
+}
+
+//termina el movimiento eliminando el evento
+function finMovimiento () {
+  this.style.zIndex = "1";
+  object.removeEventListener("mousemove",continuarMovimiento,false );
+}
+
+//continua el movimiento determinando la nueva posicion
+function continuarMovimiento(e) {
+  // Calcula los bordes de la ventana
+  const maxX = window.innerWidth - this.offsetWidth;
+  const maxY = window.innerHeight - this.offsetHeight;
+
+  //Calcula la nueva posicion del elemento respecto al mouse
+  let newX = initX + e.pageX - firstX;
+  let newY = initY + e.pageY - firstY;
+
+  // Limita la nueva posicion dentro de los bordes
+  newX = Math.min(Math.max(0, newX), maxX);
+  newY = Math.min(Math.max(0, newY), maxY);
+
+  // Actualiza la nueva posicion
+  this.style.left = newX + "px";
+  this.style.top = newY + "px";
+}
+
+

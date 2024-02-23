@@ -1,10 +1,7 @@
 /*#FFFFFF // #F0F4FF // #4E67EB // #291D89*/
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500&family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
-
 body {
   background-image: url("../images/BG1.png");
-  font-family: "IBM Plex Sans", sans-serif;
   background-size: cover;
   color: #1d1d1d;
 }

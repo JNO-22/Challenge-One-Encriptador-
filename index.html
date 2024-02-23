@@ -1,84 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name = "description" content = "Encriptador de texto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Encriptador | Alura + Oracle</title>
-    <link rel="normalize" href="/assets/css/normalize.css" />
-    <link id="style" rel="stylesheet" href="/assets/css/Try.css" />
+    <link id="style" rel="stylesheet" href="/assets/css/normalize.css" />
   </head>
   <body>
+    <div id="container">
+      <section id="desktop-icons">
+        <img src="assets/images/icon.svg" alt="Icono de ???" class="icon" />
+        <img src="assets/images/icon.svg" alt="Icono de ???" class="icon" />
+        <img src="assets/images/icon.svg" alt="Icono de ???" class="icon" />
+        <img src="assets/images/icon.svg" alt="Icono de ???" class="icon" />
+      </section>  
+
+
     <main>
-      <header id="logo-container">
-        <img src="assets/images/logo.svg" id="logo" alt="Logo de Alura" />
-      </header>
-      <div class="container">
-        <section class="window">
-          <div class="window-border">
-            <p class="window-border-text">Notepad</p>
-            <div class="window-border-buttons">
-              <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
-           </div>
-          </div>
+      <section class="window" id="myWindow">
+        <div class="window-top">
+          <p class="window-top-text">Notepad</p>
+          <div class="window-top-buttons">
+            <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+         </div>
+        </div>
 
-          <textarea
-            name="mensaje"
-            id="mensaje"
-            cols="30"
-            rows="15"
-            placeholder="Escribe el texto que deseas encriptar o desencriptar"
-          ></textarea>
-          <div class="window-submenu">
-            <div class="window-border" id="window-warning-border">
-              <p class="window-border-text">Encrypt</p>
-              <div class="window-border-buttons">
-                <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
-             </div>
-            </div>
-            <div class="window-submenu-buttons">
-              <button class="botones btn-submenu" id="btn-encriptar">Encriptar</button>
-              <button class="botones btn-submenu" id="btn-desencriptar">Desencriptar</button>
-            </div>
-          </div>
-        </section>
+        <div class="window-content">
+          <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+        </div>        
+      </section>
 
-
-<div id="alerta">
-  <img src="assets/images/cat-s.webp" alt=" Gato" id="cat" class="cat">
-        <div class="window" id="window-alert">
-          <div class="window-border">
-            <p class="window-border-text">Alerta</p>
-            <div class="window-border-buttons">
-              <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
-           </div>
-          </div>
-          <div class="window-alert">
-            <p id="window-alert-text"></p>
-            <button id="boton-alert" class="botones">Aceptar</button>
-          </div>
+      <section class="window">
+      <div class="window-submenu">
+        <div class="window-top" id="window-warning-border">
+          <p class="window-top-text">Encrypt</p>
+          <div class="window-top-buttons">
+            <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+         </div>
+        </div>
+        <div class="window-content">
+          <button class="botones btn-submenu" id="btn-encriptar">Encriptar</button>
+          <button class="botones btn-submenu" id="btn-desencriptar">Desencriptar</button>
         </div>
       </div>
+    </section>
 
-        <aside class="window" id="window-2">
-          <div class="window-border">
-            <p class="window-border-text">Output</p>
-            <div class="window-border-buttons">
-               <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
-            </div>
-          </div>
 
-          <div class="window-output">
-            <p class="window-output-text" id="window-output-text"></p>
-            <h2 class="window-output-warning" id="warning-titulo">Ningun mensaje fue encontrado</h2>
-            <p class="window-output-warning" id="warning-texto">
-              Ingresa el texto que desees encriptar o desencriptar
-            </p>
-            <button id="boton-copiar" class="botones">Copiar</button>
-          </div>
-        </aside>
-      </div>
+
+
+
     </main>
+
+    <footer>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat dolor ea magnam eos! Corrupti maxime dicta tempora quae eius sapiente fugit culpa, tenetur nesciunt quos quo minima veniam enim.
+
+    </footer>
+  </div>   
     <script src="assets/js/main.js"></script>
   </body>
 </html>
