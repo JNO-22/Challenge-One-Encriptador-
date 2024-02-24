@@ -56,27 +56,24 @@ footer {
 }
 
 
-
-
-
 /* CONTENEDOR PRINCIPAL */
 
 /* Estilo de todas las ventanas */
 .window {
   position: absolute;
-  max-width: 50ch;
-  min-height: 10ch;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px;
   box-shadow: 4px 5px 5px #1d1d1d57;
+  z-index: 1;
+  max-width: 50ch;
 }
 
 .window-top {
   cursor: move;
   background-color: #E8DFA7;
-  border-radius: inherit;
+  border-radius: 5px 5px 0 0;
   min-height: 2rem;
   display: flex;
   align-items: center;
@@ -101,7 +98,12 @@ footer {
 }
 
 .window-content {
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   padding: 1em;
+  gap: 1em;
 }
 
 #mensaje {
@@ -112,3 +114,70 @@ footer {
   outline: none;
 }
 
+/* Encryptador */
+
+.window-submenu {
+  position: relative;
+  border: #1d1d1d 1px solid;
+  border-radius: inherit;
+
+}
+
+/* BOTONES DEL ENCRYPTADOR */
+.botones {
+  padding: 0.6em 2em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  background-color:transparent;
+}
+
+.btn-submenu:hover , .btn-submenu:focus {
+  border: none;
+  color: #fdfdfd;
+}
+.btn-submenu:focus {
+  box-shadow: inset 1px 1px 2px #1d1d1d;
+}
+#btn-encriptar:hover , #btn-encriptar:focus {
+  background-color: #e9a8d7;
+}
+#btn-desencriptar:hover , #btn-desencriptar:focus {
+  background-color: #a8e9d0;
+}
+
+/* output window style  */
+
+.window-output {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  text-align: center;
+  padding: 2em;
+  gap: 1em;
+  max-height: 25em;
+}
+
+#window-output-text {
+  width: 90%;
+  min-height: 100%;
+  overflow-y: scroll;
+  text-align: center;
+  display: none;
+  word-wrap: break-word;
+  margin: auto;
+}
+
+#window-output-img {
+  display: none;
+  width: 12em;
+  height: 100%;
+  margin: auto;
+}
+
+#boton-copiar {
+  width: 30%;
+  margin: auto;
+  display: none;
+}

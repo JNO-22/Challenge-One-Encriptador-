@@ -27,11 +27,11 @@
         </div>
 
         <div class="window-content">
-          <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+          <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
         </div>        
       </section>
 
-      <section class="window">
+      <section class="window" id="myWindow2">
       <div class="window-submenu">
         <div class="window-top" id="window-warning-border">
           <p class="window-top-text">Encrypt</p>
@@ -46,6 +46,23 @@
       </div>
     </section>
 
+    <section class="window" id="myWindow3">
+      <div class="window-top">
+        <p class="window-top-text">Output</p>
+        <div class="window-top-buttons">
+           <img src="/assets/images/buttons2.svg" alt="Buttons" class="window-button">
+        </div>
+      </div>
+
+      <div class="window-output">
+        <p class="window-output-text" id="window-output-text"></p>
+        <h2 class="window-output-warning" id="warning-titulo">Ningun mensaje fue encontrado</h2>
+        <p class="window-output-warning" id="warning-texto">
+          Ingresa el texto que desees encriptar o desencriptar
+        </p>
+        <button id="boton-copiar" class="botones">Copiar</button>
+      </div>
+    </section>
 
 
 
